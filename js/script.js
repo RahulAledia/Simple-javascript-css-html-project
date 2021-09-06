@@ -24,7 +24,6 @@ function createHighScore() {
         let highScoreBoard = document.querySelector(".highScore");
         highScoreBoard.innerHTML = `highscore:${highscore}`;
     }
-
 }
 
 //Update score board;
@@ -37,6 +36,7 @@ function updateScore() {
 
 }
 
+// Restart the game.
 function restart() {
     for (const iterator of seconds) {
         iterator.remove();
@@ -53,7 +53,6 @@ function restart() {
     updateScore();
 }
 
-
 //function to listed to the keyboard to change the direction.
 document.addEventListener('keydown', logKey);
 function logKey(e) {
@@ -65,6 +64,7 @@ function logKey(e) {
         restart();
     }
 }
+
 // food is created if it is eaten i.e  foodCreated = false;
 function createFood() {
     foodCordinatesRow = Math.floor((Math.random() * 18) + 1);
@@ -74,24 +74,19 @@ function createFood() {
     foodCreated = true;
 }
 
-
-
+// Main game loop
 function update() {
-    // game loop;
     clearInterval(timer);
     timer = setInterval(
         function run() {
-
             if (checkFoodEaten()) {
                 snakeBody.push({ y: foodCordinatesRow, x: foodCordinatesColumn })
-
                 //Create a body part and assign style to it
                 let second = document.createElement('div');
                 second.className = "second";
                 second.style.gridColumn = snakeBody[snakeBody.length - 1].x;
                 second.style.gridRow = snakeBody[snakeBody.length - 1].y;
                 container.appendChild(second);
-
                 // recount all the body parts.
                 seconds = document.querySelectorAll('.second');
                 createFood();
@@ -146,6 +141,7 @@ function checkFoodEaten() {
     }
     else return false;
 }
+
 //Snake's head touches itself
 function snakeEatsItself() {
     let EatsItself = false;

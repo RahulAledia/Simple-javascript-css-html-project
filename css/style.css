@@ -1,0 +1,67 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.body {
+  background: url("../img/bg.jpg");
+  min-height: 100vh;
+  background-size: 100vw 100vh;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#board {
+  background: linear-gradient(rgb(172, 247, 172), rgb(236, 236, 182));
+  width: 90vmin;
+  height: 90vmin;
+  border: 2px solid black;
+  display: grid;
+  grid-template-columns: repeat(18, 1fr);
+  grid-template-rows: repeat(18, 1fr);
+}
+.scores {
+  display: flex;
+  flex-direction: column;
+  height: 90vmin;
+}
+.scoresContainer {
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 10px;
+  margin-left: 10px;
+  background-color: blanchedalmond;
+}
+.scores > div > div {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 20px;
+}
+
+.head {
+  background-color: red;
+  border-radius: 30%;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+.second {
+  background-color: greenyellow;
+  border: 4px solid rgba(204, 204, 12, 0.575);
+  border-radius: 50%;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.food {
+  background-color: green;
+  border: 4px solid rgba(243, 248, 245, 0.432);
+  border-radius: 25%;
+  grid-column-start: 10;
+  grid-column-end: 10;
+  grid-row-start: 10;
+  grid-row-end: 10;
+}
